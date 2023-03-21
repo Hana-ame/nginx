@@ -4,7 +4,7 @@ server {
 
     # ssl configuration
     include /etc/nginx/conf.d/ssl/meromeromeiro.top.conf;
-    # include /etc/nginx/conf.d/ssl/hana-sweet.top.conf;
+    
 
     location / {
         # root /var/www/webroot;
