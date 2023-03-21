@@ -1,0 +1,21 @@
+server {
+    listen 443 ssl http2;
+    server_name scholar.moonchan.xyz;
+
+    # ssl configuration
+    include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
+    
+
+    location / {
+        # root /var/www/webroot;
+        proxy_set_header Host "scholar.google.com";
+        proxy_pass https://scholar.google.com/;
+    }
+
+    # redirect server error pages to the static page /50x.html
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+}
+
