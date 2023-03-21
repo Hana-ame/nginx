@@ -8,8 +8,12 @@ server {
     
     access_log /dev/null;
     error_log /dev/null;
-    
-    location ~* ^/+wp-{
+     
+    location ~* \.(py|rb|php|bak|production|env|json|example|php)$ {
+        deny all;
+    }
+
+    location ~* ^/+wp- {
         deny all;
     }
 
