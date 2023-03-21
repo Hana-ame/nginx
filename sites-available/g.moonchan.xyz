@@ -8,8 +8,8 @@ server {
 
     location / {
         # root /var/www/webroot;
-        proxy_set_header Host "google.com";
-        proxy_pass https://google.com/;
+        proxy_set_header Host "www.google.com";
+        proxy_pass https://www.google.com/;
     }
 
     # redirect server error pages to the static page /50x.html
