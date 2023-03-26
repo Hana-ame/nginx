@@ -12,6 +12,11 @@ server {
 #        error_log /var/log/nginx/error.log;
 
 
+    location /yt-dlp/ {
+        root /var/www/html/yt-dlp;
+        autoindex on;    
+    }
+    
     location / {
         root /var/www/html;
         # proxy_set_header Host $host;
