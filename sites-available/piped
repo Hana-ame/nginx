@@ -3,7 +3,7 @@ server {
     server_name piped.moonchan.xyz  ; # For all 3 hostnames
 
     location / {
-       proxy_pass http://127.0.0.1:8081;
+       proxy_pass http://127.0.0.1:8088;
        proxy_set_header Host $host;
     }
 }
@@ -12,7 +12,7 @@ server {
     server_name pipedapi.moonchan.xyz  ; # For all 3 hostnames
 
     location / {
-       proxy_pass http://127.0.0.1:8081;
+       proxy_pass http://127.0.0.1:8088;
        proxy_set_header Host $host;
     }
 }
@@ -21,7 +21,7 @@ server {
     server_name pipedproxy.moonchan.xyz  ; # For all 3 hostnames
 
     location / {
-       proxy_pass http://127.0.0.1:8081;
+       proxy_pass http://127.0.0.1:8088;
        proxy_set_header Host $host;
     }
 }
