@@ -8,6 +8,8 @@ server {
 
     location / {
         proxy_set_header Host "lens.google.com";
+        sub_filter 'www.gstatic.com' 'gstatic.moonchan.xyz';
+        sub_filter 'www.google.com' 'g.moonchan.xyz';
         proxy_pass https://lens.google.com/;
     }
 
