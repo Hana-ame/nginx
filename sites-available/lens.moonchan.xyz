@@ -1,6 +1,6 @@
 server {
     listen 443 ssl http2;
-    server_name lens.google.com;
+    server_name lens.moonchan.xyz;
 
     # ssl configuration
     include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
@@ -9,6 +9,10 @@ server {
     location / {
         proxy_set_header Host "lens.google.com";
         proxy_pass https://lens.google.com/;
+    }
+
+    location / {
+        
     }
 
     # redirect server error pages to the static page /50x.html
