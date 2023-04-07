@@ -11,7 +11,7 @@ server {
         sub_filter 'www.gstatic.com' 'gstatic.moonchan.xyz';
         sub_filter 'www.google.com' 'g.moonchan.xyz';
         # proxy_pass https://lens.google.com/;
-        proxy_pass https://127.0.3.1:8080/;
+        proxy_pass http://127.0.3.1:8080/;
     }
 
     # redirect server error pages to the static page /50x.html
