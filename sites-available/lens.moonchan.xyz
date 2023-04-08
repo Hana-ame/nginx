@@ -1,16 +1,13 @@
 server {
     listen 443 ssl http2;
-    server_name lens.moonchan.xyz;
+    server_name lens.moonchan.xyz lens-google.moonchan.xyz apis-google.moonchan.xyz play-google.moonchan.xyz gstatic.moonchan.xyz fonts-gstatic.moonchan.xyz encrypted-tbn0-gstatic.moonchan.xyz encrypted-tbn1-gstatic.moonchan.xyz encrypted-tbn2-gstatic.moonchan.xyz encrypted-tbn3-gstatic.moonchan.xyz lh3-googleusercontent.moonchan.xyz lh2-googleusercontent.moonchan.xyz lh1-googleusercontent.moonchan.xyz lh0-googleusercontent.moonchan.xyz;
 
     # ssl configuration
     include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
     
 
     location / {
-        proxy_set_header Host "lens.google.com";
-        sub_filter 'www.gstatic.com' 'gstatic.moonchan.xyz';
-        sub_filter 'www.google.com' 'g.moonchan.xyz';
-        # proxy_pass https://lens.google.com/;
+        proxy_set_header Host $host;
         proxy_pass http://127.0.3.1:8080/;
     }
 
