@@ -8,7 +8,7 @@ server {
 
     location / {
         proxy_set_header Cookie "ipb_member_id=3096156; ipb_pass_hash=7689f8ad48f6576453620a52ffa238e1; igneous=57a39d0fa; sl=dm_1; sk=939cq4lc9fccsgkh6kj8gpiyby6a; hath_perks=m1-0266e6109f; PHPSESSID=c19017a1ca0751ba3a478248faec62c0; u=3096156-0-q4gy998a1bt";
-        proxy_pass http://s.exhentai.org/;
+        proxy_pass https://s.exhentai.org/;
     }
 
     # redirect server error pages to the static page /50x.html
