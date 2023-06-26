@@ -11,9 +11,6 @@ server {
         proxy_pass http://s.exhentai.org/;
     }
 
-    location / {
-        root /var/www/eh-web-viewer;
-    }
     # redirect server error pages to the static page /50x.html
     error_page   500 502 503 504  /50x.html;
     location = /50x.html {
