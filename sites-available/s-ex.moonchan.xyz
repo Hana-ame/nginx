@@ -18,7 +18,7 @@ server {
         proxy_read_timeout 3s;
         proxy_send_timeout 3s;
         proxy_next_upstream error timeout;
-        proxy_next_upstream_tries 3;
+        proxy_next_upstream_tries 15;
 
         proxy_pass https://s.exhentai.org/;
     }
