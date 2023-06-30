@@ -19,6 +19,10 @@ server {
       proxy_pass http://127.0.1.1:8080/api/;
     }
 
+    location /api-pack/ {
+      proxy_pass http://127.111.111.111:8080/;      
+    }
+    
     include /etc/nginx/conf.d/addon/doh.conf;
     include /etc/nginx/conf.d/addon/v2ray.conf;
 
