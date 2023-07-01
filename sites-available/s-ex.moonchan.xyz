@@ -5,6 +5,8 @@ server {
     # ssl configuration
     include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
     
+    log_format custom_log '$http_x_forwarded_for - $remote_user [$time_local] "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent"'
+    
     # access_log /dev/null;
     # error_log /dev/null;
      
