@@ -8,8 +8,8 @@ server {
 
     include conf.d/addon/v2ray.conf;
 
-#        access_log /var/log/nginx/access.log;
-#        error_log /var/log/nginx/error.log;
+    access_log /dev/null;
+    error_log /dev/null;
 
 
     location / {
