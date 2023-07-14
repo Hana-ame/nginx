@@ -23,6 +23,10 @@ server {
     location /api-pack/ {
       proxy_pass http://127.111.111.111:8080/;      
     }
+
+    location /assets/ {
+      add_header Access-Control-Allow-Origin *;
+    }
     
     include /etc/nginx/conf.d/addon/doh.conf;
     include /etc/nginx/conf.d/addon/v2ray.conf;
