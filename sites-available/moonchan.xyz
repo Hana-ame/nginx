@@ -26,7 +26,7 @@ server {
 
     location /assets/ {
       add_header Access-Control-Allow-Origin *;
-      root /var/www/moonchan/assets;
+      root /var/www/moonchan;
     }
     
     include /etc/nginx/conf.d/addon/doh.conf;
