@@ -1,4 +1,4 @@
-log_format custom_log '$http_x_forwarded_for - $remote_user [$time_local] "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent"';
+# log_format custom_log '$http_x_forwarded_for - $remote_user [$time_local] "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent"';
 
 server {
     listen 443 ssl http2;
@@ -8,7 +8,7 @@ server {
     include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
     
     include /etc/nginx/conf.d/addon/no-log.conf;
-    
+
     # access_log /var/log/nginx/access.log custom_log;
     # error_log /dev/null;
      
