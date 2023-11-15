@@ -1,6 +1,9 @@
 server {
-	listen 80 moonchan.xyz;
-	listen [::]:80 moonchan.xyz;
+
+	listen 80 http2;
+	listen [::]:80 http2;
+  
+  server_name moonchan.xyz;
 
   access_log /dev/null;
 	error_log /dev/null;
