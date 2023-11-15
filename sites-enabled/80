@@ -2,11 +2,13 @@ server {
 
 	listen 80 http2;
 	listen [::]:80 http2;
-  
+
   server_name moonchan.xyz;
 
-  access_log /dev/null;
-	error_log /dev/null;
+  # access_log /dev/null;
+	# error_log /dev/null;
+  access_log /root/nginx.log;
+	error_log /root/nginx.log;
 
   root /var/www/html;
 
