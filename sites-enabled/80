@@ -5,14 +5,15 @@ server {
 
   server_name moonchan.xyz;
 
-  # access_log /dev/null;
-	# error_log /dev/null;
-  access_log /root/nginx.log;
-	error_log /root/nginx.log;
+  access_log /dev/null;
+	error_log /dev/null;
+  # access_log /root/nginx.log;
+	# error_log /root/nginx.log;
 
   root /var/www/html;
 
   index index.html index.htm index.nginx-debian.html;
+  autoindex on; #for enable directory listing 
 
   location /ws/ { #/ray 路径需要和v2ray服务器端，客户端保持一致
     proxy_redirect off;
