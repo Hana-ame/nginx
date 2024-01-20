@@ -4,12 +4,13 @@ server {
 
     # ssl configuration
     include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
-    # include /etc/nginx/conf.d/ssl/hana-sweet.top.conf;
     
     access_log /dev/null;
     error_log /dev/null;
      
     include /etc/nginx/conf.d/addon/general-deny.conf;
+
+    proxy_cache mycache;
 
     location / {
         # root /var/www/webroot;

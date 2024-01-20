@@ -10,6 +10,8 @@ server {
      
     include /etc/nginx/conf.d/addon/general-deny.conf;
 
+    proxy_cache mycache;
+
     location / {
         # root /var/www/webroot;
         proxy_set_header Host $host;
