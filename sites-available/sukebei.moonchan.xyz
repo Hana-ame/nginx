@@ -9,8 +9,8 @@ server {
     error_log /dev/null;
      
     include /etc/nginx/conf.d/addon/general-deny.conf;
-    
-    proxy_cache mycache;
+
+    # proxy_cache mycache;
 
     location / {
         # root /var/www/webroot;
