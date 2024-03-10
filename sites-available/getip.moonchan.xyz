@@ -20,16 +20,19 @@ server {
 
 server {
     listen 443 ssl http2;
-    server_name lens.moonchan.xyz;
+    server_name getip.moonchan.xyz;
 
     # ssl configuration
     include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
     
     include /etc/nginx/conf.d/addon/no-log.conf;
 
+    location /doh/ {
+      proxy_pass http://127.111.111.120:8080/doh/;
+    }
+
     location / {
-        try_files $uri $uri/ /lens.html;
-        root /var/www/lens;
+      proxy_pass http://127.111.111.120:8080/;
     }
 
     # redirect server error pages to the static page /50x.html
