@@ -1,6 +1,6 @@
 server {
     listen 443 ssl http2;
-    server_name  moonchan.xyz;
+    server_name  moonchan.xyz nmbyd1.top;
 
     # ssl configuration
     include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
@@ -84,7 +84,7 @@ server {
 # upload
 server {
     listen 443 ssl http2;
-    server_name upload.moonchan.xyz;
+    server_name upload.moonchan.xyz upload.nmbyd1.top;
 
     # ssl configuration
     include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
