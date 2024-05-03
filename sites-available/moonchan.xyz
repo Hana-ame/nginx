@@ -44,6 +44,15 @@ server {
     }
 
 
+    location /groq { 
+      proxy_redirect off;
+      proxy_pass ws://127.0.0.1:5432/groq;
+      proxy_http_version 1.1;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection "upgrade";
+      proxy_set_header Host $http_host;
+    }
+    
     include /etc/nginx/conf.d/addon/doh.conf;
     include /etc/nginx/conf.d/addon/v2ray.conf;
 
