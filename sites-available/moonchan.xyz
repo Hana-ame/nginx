@@ -44,7 +44,7 @@ server {
     }
 
 
-    location /groq { 
+    location = /groq { 
       proxy_redirect off;
       proxy_pass http://127.0.0.1:5432/groq;
       proxy_http_version 1.1;
