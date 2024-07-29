@@ -8,9 +8,16 @@ server {
 
     include conf.d/addon/v2ray.conf;
 
-    access_log /dev/null;
-    error_log /dev/null;
 
+    log_format custom '$remote_addr - $remote_user [$time_local] "$request" '
+                  'http_x_cf_ipcountry=$http_x_cf_ipcountry endpoint=$endpoint uri=$uri block=$block ';
+
+    access_log /var/log/nginx/debug.log custom;
+    error_log /var/log/nginx/debug.log custom;
+
+    if ($block) {
+        return 403;
+    }
 
     location / {
         # root /var/www/html;
