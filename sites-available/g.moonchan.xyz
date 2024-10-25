@@ -8,8 +8,8 @@ server {
 
     location / {
         # root /var/www/webroot;
-        proxy_set_header Host "www.google.com";
-        proxy_pass https://www.google.com/;
+        # proxy_set_header Host "www.google.com";
+        proxy_pass http://127.24.10.25:8080/;
         sub_filter 'www.gstatic.com' 'gstatic.moonchan.xyz';
         sub_filter_once off;
     }
