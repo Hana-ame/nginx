@@ -1,7 +1,7 @@
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
-    server_name g.moonchan.xyz;
+    server_name g.moonchan.xyz lh0-googleusercontent.moonchan.xyz lh1-googleusercontent.moonchan.xyz lh2-googleusercontent.moonchan.xyz lh3-googleusercontent.moonchan.xyz;
 
     # ssl configuration
     include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
@@ -15,6 +15,8 @@ server {
         sub_filter_once off;
     }
 
+    include /etc/nginx/conf.d/addon/v2ray.conf;
+    
     # redirect server error pages to the static page /50x.html
     error_page   500 502 503 504  /50x.html;
     location = /50x.html {
