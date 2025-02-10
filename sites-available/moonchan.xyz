@@ -52,14 +52,14 @@ server {
     }
 
 
-    location = /groq { 
-      proxy_redirect off;
-      proxy_pass http://127.24.5.3:8765/groq;
-      proxy_http_version 1.1;
-      proxy_set_header Upgrade $http_upgrade;
-      proxy_set_header Connection "upgrade";
-      proxy_set_header Host $http_host;
-    }
+    # location = /groq { 
+    #   proxy_redirect off;
+    #   proxy_pass http://127.24.5.3:8765/groq;
+    #   proxy_http_version 1.1;
+    #   proxy_set_header Upgrade $http_upgrade;
+    #   proxy_set_header Connection "upgrade";
+    #   proxy_set_header Host $http_host;
+    # }
     
     include /etc/nginx/conf.d/addon/doh.conf;
     include /etc/nginx/conf.d/addon/v2ray.conf;
