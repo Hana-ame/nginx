@@ -20,7 +20,7 @@ server {
     
     location / {
       # root /var/www/acme-challenge;
-      proxy_pass http://127.24.7.29:8080/;
+      proxy_pass http://127.0.0.1:8080/;
     }
 
     
