@@ -1,7 +1,7 @@
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
-    server_name  moonchan.work.gd;
+    server_name  mstdn.work.gd;
 
     # ssl configuration
     include /etc/nginx/conf.d/ssl/meromeromeiro.top.conf;
@@ -12,14 +12,14 @@ server {
 
     include /etc/nginx/conf.d/addon/general-deny.conf;
 
-    location / {
-      add_header X-Frame-Options "ALLOWALL";
-      root /var/www/moonchan;
-    }
+    # location / {
+    #   add_header X-Frame-Options "ALLOWALL";
+    #   root /var/www/moonchan;
+    # }
 
     
-    location /shijima/ {
-      proxy_pass http://127.0.1.1:8080/api/;
+    location / {
+      proxy_pass http://127.24.7.29:8080/;
     }
 
     
