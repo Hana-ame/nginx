@@ -20,6 +20,7 @@ server {
     
     location / {
       # root /var/www/acme-challenge;
+      proxy_set_header Host $http_host; # 必须
       proxy_pass http://127.0.0.1:8080/;
     }
 
