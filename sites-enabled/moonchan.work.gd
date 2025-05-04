@@ -12,17 +12,17 @@ server {
 
     include /etc/nginx/conf.d/addon/general-deny.conf;
 
-    # location / {
-    #   add_header X-Frame-Options "ALLOWALL";
-    #   root /var/www/moonchan;
-    # }
+    location / {
+      add_header X-Frame-Options "ALLOWALL";
+      root /var/www/nft;
+    }
 
     
-    location / {
-      # root /var/www/acme-challenge;
-      proxy_set_header Host $http_host; # 必须
-      proxy_pass http://127.0.0.1:8080/;
-    }
+    # location / {
+    #   # root /var/www/acme-challenge;
+    #   proxy_set_header Host $http_host; # 必须
+    #   proxy_pass http://127.0.0.1:8080/;
+    # }
 
     
     # include /etc/nginx/conf.d/addon/doh.conf;
