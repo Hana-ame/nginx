@@ -15,6 +15,7 @@ server {
     location / {
       add_header X-Frame-Options "ALLOWALL";
       root /var/www/nft;
+      try_files $uri $uri/ /index.html;
     }
 
     
