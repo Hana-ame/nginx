@@ -29,14 +29,10 @@ server {
       proxy_pass http://127.0.1.1:8080/api/;
     }
 
-    location /api-pack/ {
-      proxy_pass http://127.111.111.111:8080/;      
+    location /api/v2/ {
+      proxy_pass http://127.25.5.19:8080/api/v2/;
     }
 
-    location /assets/ {
-      add_header Access-Control-Allow-Origin *;
-      root /var/www/moonchan;
-    }
 
     location = /ws/ { 
       proxy_redirect off;
