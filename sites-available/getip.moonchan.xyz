@@ -29,6 +29,8 @@ server {
     include /etc/nginx/conf.d/addon/no-log.conf;
 
     location / {
+      client_body_timeout 180s;
+      client_body_buffer_size 10m;
       proxy_pass http://127.24.11.16:8080/;
       proxy_set_header Host $http_host;
     }
