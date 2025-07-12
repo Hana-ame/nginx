@@ -120,6 +120,8 @@ server {
       root /var/www/upload;
     }
 
+    client_body_timeout 300s;
+
     location /api/ {
       client_max_body_size 20m;
       proxy_pass http://127.23.12.17:8080/api/;
