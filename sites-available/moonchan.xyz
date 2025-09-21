@@ -371,7 +371,7 @@ server {
 # https://pbs.twimg.com/
 server {
     listen 443 ssl http2;
-    server_name  x.nmbyd3.top xx.nmbyd3.top;
+    server_name  x.nmbyd2.top x.nmbyd3.top xx.nmbyd3.top;
 
     # ssl configuration
     include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
