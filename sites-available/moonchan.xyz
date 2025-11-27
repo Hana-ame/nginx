@@ -227,7 +227,7 @@ server {
   server_name upload.moonchan.work.gd;
 
   # ssl configuration
-  include /etc/nginx/conf.d/ssl/moonchan.work.gd.conf;
+  include /etc/nginx/conf.d/ssl/upload.moonchan.work.gd.conf;
 
   access_log /var/log/nginx/access.log custom_log;
 
