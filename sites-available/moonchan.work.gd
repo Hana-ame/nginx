@@ -7,7 +7,7 @@ server {
   include /etc/nginx/conf.d/ssl/moonchan.work.gd.conf;
   # include /etc/nginx/conf.d/ssl/hana-sweet.top.conf;
 
-  access_log /dev/null;
+  # access_log /dev/null;
   error_log /dev/null;
 
   include /etc/nginx/conf.d/addon/general-deny.conf;
@@ -75,7 +75,7 @@ server {
   include /etc/nginx/conf.d/ssl/meromeromeiro.top.conf;
   # include /etc/nginx/conf.d/ssl/hana-sweet.top.conf;
 
-  access_log /dev/null;
+  # access_log /dev/null;
   error_log /dev/null;
 
   include /etc/nginx/conf.d/addon/general-deny.conf;

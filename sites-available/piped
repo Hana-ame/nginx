@@ -5,7 +5,7 @@ server {
     server_name piped.moonchan.xyz  ; # For all 3 hostnames
     include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
 
-    access_log /dev/null;
+    # access_log /dev/null;
     error_log /dev/null;
      
     location / {
@@ -18,7 +18,7 @@ server {
     server_name pipedapi.moonchan.xyz  ; # For all 3 hostnames
     include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
 
-    access_log /dev/null;
+    # access_log /dev/null;
     error_log /dev/null;
      
     location / {
@@ -31,7 +31,7 @@ server {
     server_name pipedproxy.moonchan.xyz  ; # For all 3 hostnames
     include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
 
-    access_log /dev/null;
+    # access_log /dev/null;
     error_log /dev/null;
      
     location / {

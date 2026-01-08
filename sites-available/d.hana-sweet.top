@@ -8,7 +8,7 @@ server {
 
     include conf.d/addon/v2ray.conf;
 
-    access_log /dev/null;
+    # access_log /dev/null;
     error_log /dev/null;
 
 

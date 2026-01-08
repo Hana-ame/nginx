@@ -5,9 +5,9 @@ server {
   # ssl configuration
   include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
   
-  access_log /dev/null;
+  # access_log /dev/null;
   error_log /dev/null;
-  # access_log /var/log/nginx/access.log custom_log;
+  # # access_log /var/log/nginx/access.log custom_log;
 
   include /etc/nginx/conf.d/addon/general-deny.conf;
 

@@ -37,7 +37,7 @@ server {
 	# Don't use them in a production server!
 	#
 	# include snippets/snakeoil.conf;
-	access_log /dev/null;
+	# access_log /dev/null;
 	error_log /dev/null;
 
 	root /var/www/html;

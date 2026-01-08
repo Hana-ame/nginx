@@ -8,7 +8,7 @@ server {
     
     include /etc/nginx/conf.d/addon/no-log.conf;
 
-    # access_log /var/log/nginx/access.log custom_log;
+    # # access_log /var/log/nginx/access.log custom_log;
     # error_log /dev/null;
 
     location / {
@@ -29,7 +29,7 @@ server {
 
     include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
     
-    access_log /dev/null;
+    # access_log /dev/null;
     error_log /dev/null;
     
     location / {

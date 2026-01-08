@@ -11,7 +11,7 @@ server {
     include conf.d/addon/v2ray.conf;
 
 
-    access_log /var/log/nginx/debug.log custom_debug;
+    # access_log /var/log/nginx/debug.log custom_debug;
 #    error_log /var/log/nginx/debug.log custom_debug;
 
     if ($block) {

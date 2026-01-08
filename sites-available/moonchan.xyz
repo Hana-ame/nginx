@@ -7,9 +7,9 @@ server {
   include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
   # include /etc/nginx/conf.d/ssl/hana-sweet.top.conf;
 
-  # access_log /dev/null;
+  # # access_log /dev/null;
   error_log /dev/null;
-  # access_log /var/log/nginx/access.log custom_log;
+  # # access_log /var/log/nginx/access.log custom_log;
 
   include /etc/nginx/conf.d/addon/general-deny.conf;
 
@@ -97,7 +97,7 @@ server {
   include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
   # include /etc/nginx/conf.d/ssl/hana-sweet.top.conf;
 
-  access_log /dev/null;
+  # access_log /dev/null;
   error_log /dev/null;
 
   # 我日这是啥？？？
@@ -123,7 +123,7 @@ server {
   # ssl configuration
   include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
 
-  access_log /dev/null;
+  # access_log /dev/null;
   error_log /dev/null;
 
   location / {
@@ -156,7 +156,7 @@ server {
   # ssl configuration
   include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
 
-  access_log /dev/null;
+  # access_log /dev/null;
   error_log /dev/null;
 
   include /etc/nginx/conf.d/addon/general-deny.conf;
@@ -191,7 +191,7 @@ server {
   include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
   # include /etc/nginx/conf.d/ssl/hana-sweet.top.conf;
 
-  access_log /dev/null;
+  # access_log /dev/null;
   error_log /dev/null;
 
   include /etc/nginx/conf.d/addon/general-deny.conf;
@@ -220,7 +220,7 @@ server {
   # ssl configuration
   include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
 
-  access_log /var/log/nginx/access.log custom_log;
+  # access_log /var/log/nginx/access.log custom_log;
 
   include /etc/nginx/conf.d/addon/general-deny.conf;
 
@@ -246,7 +246,7 @@ server {
   # ssl configuration
   include /etc/nginx/conf.d/ssl/upload.moonchan.work.gd.conf;
 
-  access_log /var/log/nginx/access.log custom_log;
+  # access_log /var/log/nginx/access.log custom_log;
 
   include /etc/nginx/conf.d/addon/general-deny.conf;
 
@@ -278,7 +278,7 @@ server {
   # ssl configuration
   include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
 
-  access_log /dev/null;
+  # access_log /dev/null;
   error_log /dev/null;
 
   include /etc/nginx/conf.d/addon/general-deny.conf;
@@ -306,7 +306,7 @@ server {
   # ssl configuration
   include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
 
-  access_log /dev/null;
+  # access_log /dev/null;
   error_log /dev/null;
 
   include /etc/nginx/conf.d/addon/general-deny.conf;
@@ -334,7 +334,7 @@ server {
   # ssl configuration
   include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
 
-  access_log /dev/null;
+  # access_log /dev/null;
   error_log /dev/null;
 
   include /etc/nginx/conf.d/addon/general-deny.conf;
@@ -362,7 +362,7 @@ server {
   # ssl configuration
   include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
 
-  access_log /dev/null;
+  # access_log /dev/null;
   error_log /dev/null;
 
   include /etc/nginx/conf.d/addon/general-deny.conf;
@@ -390,7 +390,7 @@ server {
   # ssl configuration
   include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
 
-  access_log /dev/null;
+  # access_log /dev/null;
   error_log /dev/null;
 
   include /etc/nginx/conf.d/addon/general-deny.conf;
@@ -417,7 +417,7 @@ server {
   # ssl configuration
   include /etc/nginx/conf.d/ssl/moonchan.xyz.conf;
 
-  access_log /dev/null;
+  # access_log /dev/null;
   error_log /dev/null;
 
   include /etc/nginx/conf.d/addon/general-deny.conf;

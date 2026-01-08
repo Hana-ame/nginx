@@ -9,7 +9,7 @@ server {
 
     include conf.d/addon/v2ray.conf;
 
-#        access_log /var/log/nginx/access.log;
+#        # access_log /var/log/nginx/access.log;
 #        error_log /var/log/nginx/error.log;
 
     location /tsuki/ { #/ray 路径需要和v2ray服务器端，客户端保持一致
