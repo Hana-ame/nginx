@@ -84,8 +84,8 @@ server {
 	server_name _;
 	server_name 142.171.157.74;
 
-    ssl_certificate      /root/.acme.sh/810114.xyz_ecc/fullchain.cer;
-    ssl_certificate_key  /root/.acme.sh/810114.xyz_ecc/810114.xyz.key;
+    ssl_certificate      /root/.acme.sh/142.171.157.74_ecc/fullchain.cer;
+    ssl_certificate_key  /root/.acme.sh/142.171.157.74_ecc/142.171.157.74.key;
 
     ssl_session_cache shared:SSL:10m;
     ssl_session_timeout 10m;
