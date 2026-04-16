@@ -1,32 +1,28 @@
-# Nginx Configuration (Aggressive Version)
+# Nginx Configuration (Aggressive Branch)
 
-This repository manages a streamlined Nginx configuration. It uses a separation between site definitions (wrappers) and routing logic.
+This is a clean, modularized Nginx configuration structure.
 
-## Structure
+## Core Structure
 
-- `nginx.conf`: Main Nginx configuration.
-- `sites-enabled/`: Slim wrappers for active sites (`site-*.conf`). They handle `server_name`, SSL certificates, and include the actual routing logic.
-- `sites-available/`: Formal routing logic (`route-*.conf`) containing `location` blocks.
-- `snippets/`: Reusable fragments (e.g., `3x-ui.conf`).
+- `nginx.conf`: Global settings, including `snippets/log-format.conf`.
+- `sites-enabled/`: Contains active site definitions (`site-*.conf`). These are "wrappers" that define the `server` block, server names, and include specific SSL and routing logic.
+- `sites-available/`: Contains pure routing logic (`route-*.conf`). These files consist of `location` blocks and are included by the site wrappers.
+- `snippets/`: Reusable configuration fragments (DOH, V2Ray, 3x-ui, etc.).
 - `conf.d/`:
-    - `ssl/`: SSL certificate configurations.
-    - `upstreams.conf`: Backend definitions.
-    - `addon/`: Global helper configs (DOH, V2Ray, log formats).
-- `restart.sh`: Script to test and reload Nginx.
+    - `ssl/`: Domain-specific SSL configurations.
+    - `upstreams.conf`: Backend server definitions (Twitter, Twimg).
+    - `websocket.conf`: WebSocket related proxy headers.
 
-## Managed Sites
+## Key Sites & Services
 
-The following sites are actively managed:
-- `moonchan.xyz` (and related nmbyd/810114 domains)
-- `twitter` / `twimg`
-- `nyaa` / `sukebei`
-- `llm_proxies` (Groq, SiliconFlow, Gemini)
-- `dsthanatos` (Default server fallback)
+- **Moonchan Core**: `site-moonchan.conf` covers `moonchan.xyz`, `810114.xyz`, and `nmbyd*.top` with separate SSL handling for each domain.
+- **LLM Proxies**: `site-llm.conf` provides proxying for Groq, SiliconFlow, and Gemini via direct IP/official endpoints.
+- **Social Proxies**: `site-twitter.conf` and `site-twimg.conf` for X/Twitter access.
+- **Nyaa/Sukebei**: `site-nyaa.conf` and `site-sukebei.conf` with multiple domain support (`moonchan.xyz`, `nmbyd4.top`, `810114.xyz`).
+- **Fallback**: `site-fallback.conf` serves as the `default_server`.
 
-## Deployment
+## Operational Notes
 
-To apply changes:
-```bash
-./restart.sh
-```
-The script performs `git pull` $\rightarrow$ `nginx -t` $\rightarrow$ `systemctl restart nginx`.
+- **Logging**: Access logs are disabled (`access_log off`) and error logs are suppressed (`error_log /dev/null`) for all sites.
+- **Deployment**: Use `./restart.sh` to pull changes, test configuration, and restart Nginx.
+- **Consistency**: All site wrappers include standard snippets for DOH and V2Ray by default.
