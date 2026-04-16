@@ -1,34 +1,32 @@
-# Nginx Configuration
+# Nginx Configuration (Aggressive Version)
 
-This repository manages Nginx configuration files for various services and domains.
+This repository manages a streamlined Nginx configuration. It uses a separation between site definitions (wrappers) and routing logic.
 
-## Directory Structure
+## Structure
 
 - `nginx.conf`: Main Nginx configuration.
-- `conf.d/`: Additional configuration files.
-- `sites-available/`: Available virtual host configurations.
-- `sites-enabled/`: Active virtual host configurations (symbolic links to `sites-available/`).
-- `snippets/`: Reusable configuration snippets.
-- `restart.sh`: Script to update and restart Nginx.
-
-## Deployment
-
-To apply changes from this repository to the server, run:
-
-```bash
-./restart.sh
-```
-
-The `restart.sh` script performs the following:
-1. `git pull`: Fetches the latest changes.
-2. `nginx -t`: Tests the Nginx configuration for syntax errors.
-3. `systemctl restart nginx`: Restarts the Nginx service.
+- `sites-enabled/`: Slim wrappers for active sites (`site-*.conf`). They handle `server_name`, SSL certificates, and include the actual routing logic.
+- `sites-available/`: Formal routing logic (`route-*.conf`) containing `location` blocks.
+- `snippets/`: Reusable fragments (e.g., `3x-ui.conf`).
+- `conf.d/`:
+    - `ssl/`: SSL certificate configurations.
+    - `upstreams.conf`: Backend definitions.
+    - `addon/`: Global helper configs (DOH, V2Ray, log formats).
+- `restart.sh`: Script to test and reload Nginx.
 
 ## Managed Sites
 
-Most sites are managed via `sites-available/` and symlinked to `sites-enabled/`. Key domains include:
+The following sites are actively managed:
+- `moonchan.xyz` (and related nmbyd/810114 domains)
+- `twitter` / `twimg`
+- `nyaa` / `sukebei`
+- `llm_proxies` (Groq, SiliconFlow, Gemini)
+- `dsthanatos` (Default server fallback)
 
-- `moonchan.xyz` (and its subdomains like `g.moonchan.xyz`, `nyaa.moonchan.xyz`, etc.)
-- `hana-sweet.top`
-- `meromeromeiro.top`
-- Various other services (e.g., `siliconflow`, `twitter`, `twimg`)
+## Deployment
+
+To apply changes:
+```bash
+./restart.sh
+```
+The script performs `git pull` $\rightarrow$ `nginx -t` $\rightarrow$ `systemctl restart nginx`.
