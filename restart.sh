@@ -1,7 +1,7 @@
 git pull
 if nginx -t; then
-    systemctl restart nginx
+    systemctl reload nginx
 else
-    echo "Nginx configuration test failed. Skipping restart."
+    echo "Nginx configuration test failed. Skipping reload."
     exit 1
 fi
