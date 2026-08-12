@@ -17,6 +17,10 @@ fastcgi_param  SERVER_SOFTWARE    nginx/$nginx_version;
 
 fastcgi_param  REMOTE_ADDR        $remote_addr;
 fastcgi_param  REMOTE_PORT        $remote_port;
+<<<<<<< HEAD
+=======
+fastcgi_param  REMOTE_USER        $remote_user;
+>>>>>>> eaa8523 (bwh: 初始 nginx 配置 (含 zen v4/v6 websocket 反代))
 fastcgi_param  SERVER_ADDR        $server_addr;
 fastcgi_param  SERVER_PORT        $server_port;
 fastcgi_param  SERVER_NAME        $server_name;
