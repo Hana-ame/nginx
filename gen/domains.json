@@ -1,0 +1,25 @@
+{
+  "_comment": "主域名（证书组）定义。每组共享同一张通配符证书，生成时每个组独立成一个 server 块（SSL 隔离规则）。",
+  "cert_groups": [
+    {
+      "name": "moonchan",
+      "ssl": "/etc/nginx/conf.d/ssl/moonchan.xyz.conf",
+      "domains": ["moonchan.xyz"]
+    },
+    {
+      "name": "s810114",
+      "ssl": "/etc/nginx/conf.d/ssl/810114.xyz.conf",
+      "domains": ["810114.xyz"]
+    },
+    {
+      "name": "s4545810",
+      "ssl": "/etc/nginx/conf.d/ssl/4545810.xyz.conf",
+      "domains": ["4545810.xyz"]
+    },
+    {
+      "name": "nmbyd",
+      "ssl": "/etc/nginx/conf.d/ssl/nmbyd.top.conf",
+      "domains": ["nmbyd2.top", "nmbyd3.top", "nmbyd4.top", "nmbyd5.top", "nmbyd6.top", "nmbyd7.top", "nmbyd8.top"]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "_comment": "矩阵功能表：每个功能 = 一组子域名前缀 + 一个 route 文件。生成时对每个证书组（主域名）展开 server_name，遵守 SSL 隔离。exhentai 用显式模式（含通配符，现网行为）。",
+  "sites": [
+    {
+      "name": "twitter",
+      "prefixes": ["x"],
+      "route": "/etc/nginx/sites-available/twitter.conf"
+    },
+    {
+      "name": "twimg",
+      "prefixes": ["twimg", "pbs"],
+      "route": "/etc/nginx/sites-available/twimg.conf"
+    },
+    {
+      "name": "proxy",
+      "prefixes": ["proxy"],
+      "route": "/etc/nginx/sites-available/proxy.conf"
+    },
+    {
+      "name": "pximg",
+      "prefixes": ["pximg"],
+      "route": "/etc/nginx/sites-available/pximg.conf"
+    },
+    {
+      "name": "upload",
+      "prefixes": ["upload"],
+      "route": "/etc/nginx/sites-available/upload.conf"
+    },
+    {
+      "name": "nyaa",
+      "prefixes": ["nyaa"],
+      "route": "/etc/nginx/sites-available/nyaa.conf"
+    },
+    {
+      "name": "sukebei",
+      "prefixes": ["sukebei", "skb"],
+      "route": "/etc/nginx/sites-available/sukebei.conf"
+    },
+    {
+      "name": "exhentai",
+      "server_names": {
+        "moonchan": ["ex.moonchan.xyz", "ehwv.moonchan.xyz", "eh-web-viewer.moonchan.xyz", "cloudcone.moonchan.xyz"],
+        "s810114": ["*.810114.xyz"],
+        "s4545810": ["*.4545810.xyz"],
+        "nmbyd": ["*.nmbyd2.top"]
+      },
+      "route": "/etc/nginx/sites-available/exhentai.conf"
+    },
+    {
+      "name": "ehgt",
+      "prefixes": ["ehgt"],
+      "route": "/etc/nginx/sites-available/ehgt.conf"
+    },
+    {
+      "name": "inline-chat",
+      "prefixes": ["inline-chat"],
+      "route": "/etc/nginx/sites-available/inline-chat.conf"
+    }
+  ],
+  "_special": [
+    "moonchan (裸域主站, 含 c./vps./cloudcone./d./d4./d6./dd. 等别名, 3 个证书组分块)",
+    "llm (groq/siliconflow/generativelanguage 内联 location)",
+    "misc (pkg-go-dev 内联)",
+    "fallback (default_server + dsthanatos)",
+    "publicvm (moonchan.publicvm.com + free_dns.conf)",
+    "zen-v4 / zen-v6 (各服务器专属: cloudcone-zen/vps-zen/bwh-zen)",
+    "peerfs / chatto / livekit / s3proxy / scnet / sensenova / peersignal (cloudcone 特制完整 server 块, 手工维护)"
+  ]
+}

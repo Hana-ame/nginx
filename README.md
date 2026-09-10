@@ -26,3 +26,15 @@ This is a clean, modularized Nginx configuration structure.
 - **Logging**: Access logs are disabled (`access_log off`) and error logs are suppressed (`error_log /dev/null`) for all sites.
 - **Deployment**: Use `./restart.sh` to pull changes, test configuration, and restart Nginx.
 - **Consistency**: All site wrappers include standard snippets for DOH and V2Ray by default.
+
+## 生成机制 (gen/)
+
+`sites-enabled/site-*.conf` 中矩阵类站点（twitter/twimg/proxy/pximg/upload/nyaa/sukebei/exhentai/ehgt/inline-chat）
+由 `gen/gen.py` 生成，**不要手工编辑**。
+
+- `gen/domains.json` — 主域名(证书组)定义: 每组一张通配符证书, 生成时每组独立 server 块(SSL 隔离)
+- `gen/sites.json` — 功能表: 前缀列表 × 所有主域名自动展开 server_name; exhentai 用显式模式(含通配符)
+- 修改后运行: `python3 gen/gen.py` 再 `nginx -t`
+
+特殊站点(手工维护, 不生成): site-moonchan / site-llm / site-misc / site-fallback /
+site-publicvm / site-zen-v4 / site-zen-v6。
